@@ -1,1 +1,1 @@
-# gpt-chatbot
+# blender-chatbot
