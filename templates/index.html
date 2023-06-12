@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blenderbot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    body {
+        background-color: #3b3b3b;
+        color: #fff;
+    }
+</style>
+
+<body>
+    <h1>Chatbot</h1>
+    <div>
+        <ul>
+            {% for item in ui_history %}
+            <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <form action="/" method="POST">
+        <label for="input">User:</label>
+        <input type="text" id="user_input" name="user_input" required>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>
