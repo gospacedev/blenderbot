@@ -1,1 +1,1 @@
-# blender-chatbot
+# blenderbot
