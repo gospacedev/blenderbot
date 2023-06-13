@@ -18,9 +18,11 @@ After that install the required packages:
 pip install -r requirements.txt
 ```
 
-Then, run it in the web:
+Then run it in the web:
 ```
 flask run
 ```
 
 It should look something like this:
+
+![blender-bot-screenshot](https://raw.githubusercontent.com/gospacedev/blenderbot/main/blender-bot-screenshot.png)
