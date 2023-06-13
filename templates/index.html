@@ -5,31 +5,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blenderbot</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
 <style>
     body {
-        background-color: #3b3b3b;
-        color: #fff;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(59, 59, 59);
+        color: white;
+    }
+
+    input {
+        color: white;
+        font-size: large;
+    }
+
+    #title {
+        font-size: large;
+        margin-top: 5%;
+        margin-left: 17%;
+        margin-right: 17%;
+        margin-bottom: 2%;
+    }
+
+    #chat {
+        font-size: large;
+        margin-top: 5%;
+        margin-left: 17%;
+        margin-right: 17%;
+        margin-bottom: 7%;
     }
 </style>
 
 <body>
-    <h1>Chatbot</h1>
-    <div>
+    <div id="title">
+        <h1>Blenderbot🚀🚀🚀</h1>
+    </div>
+
+
+    <div id="chat">
         <ul>
             {% for item in ui_history %}
             <li>{{ item }}</li>
             {% endfor %}
         </ul>
+
+        <form action="/" id="chat-form" method="post" class="input-field">
+            <input type="text" name="user_input" placeholder="Enter your response">
+            <button type="submit" class="btn">Send</button>
+        </form>
     </div>
 
-    <form action="/" method="POST">
-        <label for="input">User:</label>
-        <input type="text" id="user_input" name="user_input" required>
-        <br><br>
-        <input type="submit" value="Submit">
-    </form>
 </body>
 
 </html>

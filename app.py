@@ -1,3 +1,4 @@
+import string
 from flask import Flask, render_template, request
 from transformers import BlenderbotTokenizer, BlenderbotForConditionalGeneration
 
@@ -26,18 +27,21 @@ def generate_response(history):
 
 @app.route("/", methods=["GET", "POST"])
 def index():
-    if request.method == "POST" or "GET":
+    if request.method == "POST":
         global history
+
         user_input = request.form["user_input"]
         history += tokenizer.bos_token + user_input + tokenizer.eos_token + " "
 
-        response = request.form["response"]
         response = generate_response(history)
         history += tokenizer.bos_token + response + tokenizer.eos_token + " "
 
         ui_history.append(user_input)
         ui_history.append(response)
-
+    else:
+        user_input = ""
+        response = ""
+    
     return render_template("index.html", ui_history=ui_history)
 
 if __name__ == "__main__":
