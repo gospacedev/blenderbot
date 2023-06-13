@@ -4,9 +4,7 @@ Blenderbot is a chat bot that uses the open-domain [facebook/blenderbot-400M-dis
 
 ## Get Started
 
-First you will need the Python compiler installed.
-
-Then clone this repository using this command:
+First you will need the [Python](https://www.python.org/) installed. Then clone this repository using this command:
 
 ```
 git clone https://github.com/gospacedev/blenderbot.git
